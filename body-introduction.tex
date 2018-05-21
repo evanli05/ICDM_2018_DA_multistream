@@ -1,0 +1,45 @@
+Data stream is a very important concept in a modern connected Internet 
+world, and it has attracted the attention of researchers worldwide. Given some important
+applications of data streams, such as IoT, social networks, surveillance, and etc.,
+mining data streams is becoming a more and more important topic to explore. 
+However, data stream mining is also a challenging task due to its distinctive nature. 
+For example, a data stream is theoretically infinite in length, therefore its volume
+is very large. Meanwhile, it is possible that we have high velocity of data arrivals as well. Those properties has distinguished data 
+stream mining significantly from traditional data mining problems \cite{haque2016SAND}.
+
+
+% This paragraph talks about stream classification
+This paragraph talks about stream classification
+
+% This paragraph talks about multistream settings
+This paragraph talks about multistream settings
+
+% This paragraph talks about domain adaptation
+When it comes the setting of multistream, the problem
+becomes even more complicated. There is a need to address machine learning tasks of building 
+models in a one domain by using information available from another domain. In
+this case, knowledge from the source domain can be transferred to the target domain to
+help get high prediction accuracy. This transferring process is important in many 
+circumstance where labels in a certain domain are limited or too expensive to obtain \cite{arnold2007comparative, hoi2014libol}.
+For example, it is difficult to collect labeled sensor
+data from personal devices, while rich information from social media messages are available, such as 
+activities and locations. Thus, knowledge from social media side can be transferred to
+the physical world to address the ubiquitous computing tasks \cite{wei2016instilling}. 
+
+
+In practice, most existing approaches usually conduct the learning problems in batch, such as previous example, Here, it 
+assumes that training data are provided as a whole in advance \cite{pan2010survey}. However, such assumption 
+doesn't always hold in real world applications, since under a data stream setting all 
+instances may arrive in a sequential manner. Take online spam email detection for example \cite{chen2015opinion}. 
+Normally, a classifier is built in by using a static training dataset, and it is trained in batch to
+detect spam emails as accurately as possible. However, the very definition of spam varies from 
+person to person. In this case, the transfer of knowledge to personalize the spam detector for each 
+individual becomes critical. Even for a specific person, the definition of spam could change over time. During a 
+time period one may consider advertisement from Zillow to be spam. When he starts to consider buying a house,
+Zillow ads is not spam for him anymore. Such problem can be formulated as an multistream learning task, the 
+objective of which is to build an online prediction model for the target domain by using information 
+available in the source domain with distinct feature space. Compared to the previous example, this task 
+is more challenging, as the concept is evolving in the data streams simultaneously in both source and target streams.
+
+
+
