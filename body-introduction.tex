@@ -59,12 +59,17 @@ is more challenging, as the concept is evolving in the data streams simultaneous
 \label{fig:featureprojection}
 \end{figure}
 
+\textcolor{red}{Here I need to emphasis that: 1. source and targe streams have different dimension of features. 2. features does not have any correspondence. 3 two datasets are related.}
+
 This paper proposes a solution, called MultiStream Domain Adaptation (MSDA), to handle the issues described above. The
 main idea is to find a common feature subspace for two distinctive streams. This idea can
 be demonstrated in Figure ~\ref{fig:featureprojection}. In this case, data in domain A are 1D and in domain B are 2D. By applying the proposed projection algorithm, we
 try to find a latent feature space that distribution in original and latent feature space are similar. 
-Meanwhile the structure of data is preserved, which means distinct classes are still far apart.
-Thus the core problem here is to find a feature space that maximize the similarity between 
+Meanwhile, the structure of data should be preserved, which means distinct classes are still far
+apart, and the decision boundaries for different categories should still be preserved.
+Thus the core problem here is to find a feature space that maximize the similarity between
+original and projected latent feature space. The main contributions of this paper are as follows:
 
+1. We create a new data stream classification setting with two independent non-stationary streams. T
 
 

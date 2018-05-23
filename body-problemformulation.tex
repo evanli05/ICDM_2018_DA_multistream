@@ -1,0 +1,46 @@
+In this section, the problem of multistream classification with domain adaptation problem is finalized, and the challenges of conducting an adaptive classification performance over drifting data streams is deliberated.
+
+\subsection{Notations and Problem Statement}
+\label{subsec: problemstatement}
+
+In Table~\ref{tab:notations}, frequently used symbols in this paper are listed. There are two 
+continuous stream of data instances generated from source domain $D_{s}$ and target domain $D_{t}$.
+A data instance is denoted as $(x, y)$, where $x$ is a vector (m-dimensional in 
+source stream \& n-dimensional in target stream),and y is the 
+corresponding label. In the source stream, both $x_{s}$ and $y_{s}$  are available, while in the target domain only $x_{t}$ is available. Therefore, a multistream classification with domain adaptation problem can be described as follows:
+
+Suppose $X_{s}$ is a set of m-dimensional vectors and $Y_{s}$ is the corresponding label in source stream from a certain domain $D_{s}$, 
+while $X_{t}$ is a set of n-dimensional vectors in target stream from another 
+domain $D_{t}$. In our problem setting, m $\neq$ n. The objective is to construct a classifier $M$ that
+predicts class labels of $x_{t} \in X_{t}$ using $X_{s}$, $Y_{s}$ and $Y_{t}$.
+
+\begin{table}[H]
+\centering
+\caption{Notations}
+\label{tab:notations}
+\begin{tabular}{|l|l|}
+\hline
+Symbol & Meaning \\ \hline
+ $D_{s}$ & Domain of source stream \\ \hline
+ $D_{t}$ & Domain of target stream \\ \hline
+ $S$ & Source data stream with labeled \\ \hline
+ $T$ & Target data stream without label \\ \hline
+ $X_{s}$ & Feature space of source stream with dimension $m$ \\ \hline
+ $X_{t}$ & Feature space of target stream with dimension $n$ \\ \hline
+ $Y_{s}$ & Label space of source stream \\ \hline
+ $Y_{t}$ & Label space of target stream \\ \hline
+ $x_{s}$ & Data instance of source stream \\ \hline
+ $x_{t}$ & Data instance of target stream \\ \hline
+ $y_{s}$ & True label of a data instance in source \\ \hline
+ $y_{t}$ & Predicted label of a data instance in target \\ \hline
+ $P_{s}$ & Probability distribution function of source data \\ \hline 
+ $P_{t}$ & Probability distribution function of target data \\ \hline
+ $N_{max}$ & Maximum allowable size for dynamic window \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Challenges}
+The the problem setting of multistream classification with domain adaptation, there are two major challenges at the same time.
+The first challenge is the adaptation of both source and target domain. Since source data cannot be directly used as training data to learn the target task, 
+how to 
+
