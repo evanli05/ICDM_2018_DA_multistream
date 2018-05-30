@@ -3,8 +3,9 @@ world, and it has attracted the attention of researchers worldwide. Given some i
 applications of data streams, such as IoT, social networks, surveillance, and etc.,
 mining data streams is becoming a more and more important topic to explore. 
 However, data stream mining is also a challenging task due to its distinctive nature. 
-For example, a data stream is theoretically infinite in length, therefore its volume
-is very large. Meanwhile, it is possible that we have high velocity of data arrivals as well. Those properties has distinguished data 
+For example, a data stream is theoretically infinite in length, therefore, its volume
+is very large. Meanwhile, it is possible that we have high velocity of data arrivals, and labels may not be available immediately after arrivals of new data instances to update the model. 
+Those properties has distinguished data 
 stream mining significantly from traditional data mining problems \cite{haque2016SAND}.
 
 
@@ -59,7 +60,7 @@ is more challenging, as the concept is evolving in the data streams simultaneous
 \label{fig:featureprojection}
 \end{figure}
 
-\textcolor{red}{Here I need to emphasis that: 1. source and targe streams have different dimension of features. 2. features does not have any correspondence. 3 two datasets are related.}
+\textcolor{red}{My Hint: Here I need to emphasis that: 1. source and targe streams have different dimension of features. 2. features does not have any correspondence. 3 two datasets are related.}
 
 This paper proposes a solution, called MultiStream Domain Adaptation (MSDA), to handle the issues described above. The
 main idea is to find a common feature subspace for two distinctive streams. This idea can
@@ -70,6 +71,8 @@ apart, and the decision boundaries for different categories should still be pres
 Thus the core problem here is to find a feature space that maximize the similarity between
 original and projected latent feature space. The main contributions of this paper are as follows:
 
-1. We create a new data stream classification setting with two independent non-stationary streams. T
+1. We create a new data stream classification setting with two independent non-stationary streams.
+2. 
+3. 
 
 

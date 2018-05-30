@@ -9,7 +9,7 @@
 
 \usepackage{booktabs} % For formal tables
 \usepackage{bm}
-\usepackage{amsmath}
+\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{algorithm}
 \usepackage{indentfirst}
 \usepackage[noend]{algpseudocode}
@@ -18,6 +18,8 @@
 \usepackage{siunitx}
 \usepackage{graphicx}
 \usepackage[usenames, dvipsnames]{color}
+\usepackage{dsfont}
+% \usepackage{amssymb}
 
 % *** CITATION PACKAGES ***
 %
@@ -259,25 +261,7 @@
 \maketitle
 
 \begin{abstract}
-Recently, a new concept of multistream is introduced. Under this problem setting, 
-two data streams are involved, which are referred as source and target streams. The 
-source stream continuously generates data instances from a certain domain with 
-labels, while the target stream continuously generates data instances from another 
-domain without labels. Existing approaches assume that domains for both data streams 
-are identical, which is not quite true in reality, since data streams from different 
-sources may contain distinct features, for instance, different number of features. Furthermore, obtaining labels for every instance 
-in data streams is often expensive and time-consuming. Therefore, whether labeled 
-instances from related streams can be helpful to predict the unlabeled instances in 
-a certain stream becomes an important topic to explore. In this paper, domains between 
-source and target streams may have distinct feature spaces and data distributions. 
-Our objective is to predict class labels of data instances in the target stream by 
-using the classifiers trained in the source stream.
-
-We propose a framework of multistream classification by incorporating domain adaptation 
-between source and target streams. At the same time, empirical valuation and analysis 
-on both synthetic and real-world datasets are performed to validate the effectiveness 
-of our proposed algorithm, comparing to state-of-the-art techniques. Experiment results 
-show that our approach significantly outperforms other existing benchmarks.
+\input{body-abstract.tex}
 \end{abstract}
 
 \begin{IEEEkeywords}

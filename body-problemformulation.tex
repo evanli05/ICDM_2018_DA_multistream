@@ -14,7 +14,7 @@ while $X_{t}$ is a set of n-dimensional vectors in target stream from another
 domain $D_{t}$. In our problem setting, m $\neq$ n. The objective is to construct a classifier $M$ that
 predicts class labels of $x_{t} \in X_{t}$ using $X_{s}$, $Y_{s}$ and $Y_{t}$.
 
-\begin{table}[H]
+\begin{table}[t]
 \centering
 \caption{Notations}
 \label{tab:notations}
@@ -23,16 +23,20 @@ predicts class labels of $x_{t} \in X_{t}$ using $X_{s}$, $Y_{s}$ and $Y_{t}$.
 Symbol & Meaning \\ \hline
  $D_{s}$ & Domain of source stream \\ \hline
  $D_{t}$ & Domain of target stream \\ \hline
- $S$ & Source data stream with labeled \\ \hline
- $T$ & Target data stream without label \\ \hline
+ $S$ & Source stream data\\ \hline
+ $T$ & Target stream data \\ \hline
  $X_{s}$ & Feature space of source stream with dimension $m$ \\ \hline
  $X_{t}$ & Feature space of target stream with dimension $n$ \\ \hline
  $Y_{s}$ & Label space of source stream \\ \hline
  $Y_{t}$ & Label space of target stream \\ \hline
  $x_{s}$ & Data instance of source stream \\ \hline
  $x_{t}$ & Data instance of target stream \\ \hline
- $y_{s}$ & True label of a data instance in source \\ \hline
- $y_{t}$ & Predicted label of a data instance in target \\ \hline
+ $y_{s}$ & True label of a data instance in source stream \\ \hline
+ $y_{t}$ & Predicted label of a data instance in target stream \\ \hline
+ $W_{s}$ & Projection function to the source space \\ \hline
+ $W_{t}$ & Projection function to the target space \\ \hline
+ $L_{s}$ & Projected data from source to latent space \\ \hline
+ $L_{t}$ & Projected data from target to latent space \\ \hline
  $P_{s}$ & Probability distribution function of source data \\ \hline 
  $P_{t}$ & Probability distribution function of target data \\ \hline
  $N_{max}$ & Maximum allowable size for dynamic window \\ \hline
@@ -41,6 +45,12 @@ Symbol & Meaning \\ \hline
 
 \subsection{Challenges}
 The the problem setting of multistream classification with domain adaptation, there are two major challenges at the same time.
-The first challenge is the adaptation of both source and target domain. Since source data cannot be directly used as training data to learn the target task, 
-how to 
+The first challenge is the adaptation of both source and target domain, and it can be represented as $D_{s} \neq D_{t}$
+Since source data cannot be directly used as training data to learn the target task, 
+how to discover a latent feature space that fits both source and target streams is the key to handle the feature heterogeneity issue.
+The second challenge is the asynchronous concept drift in both source and target streams. 
+This phenomenon means that the data pattern evolves, or more formally, the conditional probability distribution changes over time in both streams. 
+Here, the problem can be described as $P_{s}^{t}(y \mid \mathbf{x}) \neq P_{t}^{t}(y \mid \mathbf{x})$ at time $t$. Furthermore, we assume that source and target data streams have asynchronous concept drifts,
+which means that the drifts in both streams occur independently. 
 
+\textcolor{red}{add detailed demonstration of the flow chart here}
