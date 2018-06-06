@@ -1,0 +1,7 @@
+In this paper, a multistream classification framework that incorporates domain adaptation techniques is proposed. Two major challenges, namely heterogeneous domain and concept drift, are addressed simultaneously in two data streams.
+Our solution involves an embedding-based mapping approach for domain adaptation, and an online update mechanism using average mean discrepancy for concept drift correction.
+More specifically, the mapping approach helps to find a common latent space for both source and target stream, which preserves the structure of data and maximizes the similarities between source and target data.
+Additionally, the prediction model is updated if a concept drift is detected, which happens when a likelihood ratio is greater than the user-defined threshold $\tau$.
+Extensive experiments with both real-world and synthetic data show that our approach has significantly better performance in terms of error rate on various datasets, compared to existing state-of-the-art solutions.
+
+We would like to extend the work in the following directions. First, we solely discuss binary classification applying SVM and LR models in this paper. We can further explore a multiple classification problems under this setting. Next, the multistream setting that we discussed in Section~\ref{sec:problemformulation} take two data streams into consideration, which are source and target data streams. A further discussion regarding three or more data streams can be explored as well. 
