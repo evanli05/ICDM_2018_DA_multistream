@@ -88,7 +88,7 @@ Also, note that here we are not applying the alternative definition such as $\el
 Furthermore, we define $\mathbf{D}\left(L{s}, L_{t}\right)$ as follows:
 \begin{equation}
 \label{fcn:crossSimilarity}
-    \mathbf{D}\left(L_{s}, L_{t}\right) =\frac{1}{2}\left(\ell\left(B_s, L_{t}\right) + \ell\left(B_t, L_{s}\right)\right)
+    \mathbf{D}\left(L_{s}, L_{t}\right) =\frac{1}{2}\ell\left(B_s, L_{t}\right) + \frac{1}{2} \ell\left(B_t, L_{s}\right)
 \end{equation}
 which is the mean value of cross-similarity between the original data and projected data. Finally, the parameter $\beta$ controls the trade-off of importance of semantic similarity co-regularization by minimizing the differences between $\mathbf{D}(L_{s}, L_{t})$.
 
@@ -144,7 +144,7 @@ L_t^{(j)}=B_t^{(j)}W_t^{-1} \qquad {B}_t^{(j)}\in {B}_t\\
 \end{cases}
 \end{equation}
 
-There are several algorithm can be used in MSDA. As new instances arrive in $S$ or $T$, the classifier is updated if there is a drift to ensure that it represents the current concepts. A new classification model is trained using data in $B_s$ and $B_t$ at that time. Concept drift detection and the updating method used by MSDA will be discussed Section~\ref{sec:changedetection} in this section. MSDA predicts the  class label of an incoming target instance from the target stream after projecting the instance into the new data format.
+There are several algorithm can be used in MSDA. We are mainly focus on a binary classification problem here, and our approaches can be extend to multiple classfication. As new instances arrive in $S$ or $T$, the classifier is updated if there is a drift to ensure that it represents the current concepts. A new classification model is trained using data in $B_s$ and $B_t$ at that time. Concept drift detection and the updating method used by MSDA will be discussed Section~\ref{sec:changedetection} in this section. MSDA predicts the  class label of an incoming target instance from the target stream after projecting the instance into the new data format.
 
 
 \subsection{Change Detection Module (CDM)}
@@ -205,9 +205,10 @@ A drift is detected if it is more than a user-defined threshold $\tau$, as follo
 S = ln\frac{Disc_t(L_{s}^t,L{t}^t)}{Disc_0(L_{s}^0,L_{t}^0)}>\tau
 \end{equation}
 
-The efficiency of MSDA stems from the fact that in addition to estimating the projection matrix among current fixed windows, it uses the same Mean Discrepancy model for drift detection. Therefore, MSDA detects drift without adding any extra overhead.
-
 Algorithm 2 demonstrates an online updating algorithm for change point detection. If a new instance arrived in the source stream, we update the window $L_s$ by discarding the oldest instance and storing the new instance (line 1-6). Then, new arrived data are projected into the new subspace, and the mean of source instances $\mu_s$ is updated as well in current window. Otherwise, we update the target window $L_t$ and target mean $\mu_t$ instead (line 9-13). At last, the mean discrepancy of two streams is calculate (line 15), and a change score formulated (line 16).
+
+In addition to estimating the projection matrix among current fixed windows, MSDA uses the same Mean Discrepancy model for drift detection. Therefore, this approach detects drift without adding any extra overhead.
+
 
 \subsection{Complexity Analysis}
 In this approach, a new model is trained from source to target stream for every iteration of multistream classification. Thus, the time complexity of this approach depends on the classification model we used. Within the classification model, the training process, which is the updating model determines the complexity of whole algorithm.

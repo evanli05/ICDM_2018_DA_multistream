@@ -47,9 +47,7 @@ Symbol & Meaning \\ \hline
 
 \subsection{Challenges}
 In the problem setting of multistream classification with domain adaptation, there are two major challenges at the same time.
-The first challenge is the adaptation of both source and target domain, and it can be represented as $D_{s} \neq D_{t}$. As shown in Figure~\ref{fig:domainadaptation}, two streams may have different number of instances. However, without loss of generality, buffers (windows) from these streams representing contiguous data points will have the same number of instances $N_m$. Furthermore, each data point in source stream may have a different number of features compared to those in the target stream.
-
-Therefore, source data cannot be directly used as training data to learn the target task, 
+The first challenge is the adaptation of both source and target domain, and it can be represented as $D_{s} \neq D_{t}$. As shown in Figure~\ref{fig:domainadaptation}, two streams may have different number of instances. However, without loss of generality, buffers (windows) from these streams representing contiguous data points will have the same number of instances $N_m$. Furthermore, each data point in source stream may have a different number of features compared to those in the target stream. Therefore, source data cannot be directly used as training data to learn the target task, 
 and discovering a latent feature space with $k$ dimensions is the key to handling the feature heterogeneity issue.
 The second challenge is the asynchronous concept drift in both source and target streams. 
 This phenomenon means that the data pattern evolves, or more formally, the conditional probability distribution changes over time in both streams. 
